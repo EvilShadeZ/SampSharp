@@ -1,6 +1,12 @@
+### 0.11.1
+- Fixed an error which occurs when a callback has an empty string as argument (#450)
+
 ### 0.11.0
 - Added `TaskHelper.SwitchToMainThread` (#402)
 - Improved performance of callbacks by 25%-30% (#399, #401)
+- Minor improvement of natives performance
+- Fixed encoding of strings in callback arguments ignooring game mode builder configuration
+- Removed multi-process mode
 
 ### 0.10.1
 - Fixed a possible crash when calling natives which return a string
