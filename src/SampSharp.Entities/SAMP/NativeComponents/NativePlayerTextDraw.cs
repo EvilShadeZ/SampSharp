@@ -41,6 +41,12 @@ public class NativePlayerTextDraw : NativeComponent
     }
 
     [NativeMethod]
+    public virtual void PlayerTextDrawSetPos(float x, float y)
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod]
     public virtual bool PlayerTextDrawLetterSize(float x, float y)
     {
         throw new NativeNotImplementedException();
@@ -147,4 +153,5 @@ public class NativePlayerTextDraw : NativeComponent
     {
         throw new NativeNotImplementedException();
     }
+
 }

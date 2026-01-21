@@ -30,6 +30,12 @@ public class NativeTextDraw : BaseNativeComponent
     }
 
     [NativeMethod]
+    public virtual void TextDrawSetPos(float x, float y)
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod]
     public virtual bool TextDrawLetterSize(float x, float y)
     {
         throw new NativeNotImplementedException();

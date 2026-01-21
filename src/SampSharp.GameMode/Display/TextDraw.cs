@@ -31,7 +31,7 @@ public partial class TextDraw : IdentifiedPool<TextDraw>
     public const int InvalidId = 0xFFFF;
 
     /// <summary>Maximum number of text draws which can exist.</summary>
-    public const int Max = 2048;
+    public const int Max = 256;
 
     /// <summary>
     /// Occurs when the <see cref="BaseMode.OnPlayerClickTextDraw(BasePlayer,ClickTextDrawEventArgs)" /> is being called. This callback is called when a

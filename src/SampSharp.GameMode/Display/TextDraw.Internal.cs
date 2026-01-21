@@ -29,6 +29,12 @@ public partial class TextDraw
         }
 
         [NativeMethod]
+        public virtual void TextDrawSetPos(int text, float x, float y)
+        {
+            throw new NativeNotImplementedException();
+        }
+
+        [NativeMethod]
         public virtual bool TextDrawDestroy(int text)
         {
             throw new NativeNotImplementedException();

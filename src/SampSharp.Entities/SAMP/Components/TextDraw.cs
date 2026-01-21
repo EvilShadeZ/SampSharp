@@ -18,6 +18,7 @@ namespace SampSharp.Entities.SAMP;
 /// <summary>Represents a component which provides the data and functionality of a textdraw.</summary>
 public class TextDraw : Component
 {
+    private Vector2 _position = Vector2.Zero;
     private TextDrawAlignment _alignment = TextDrawAlignment.Left;
     private Color _backColor = Color.Black;
     private Color _boxColor = Color.Transparent;
@@ -36,7 +37,7 @@ public class TextDraw : Component
     /// <summary>Constructs an instance of TextDraw, should be used internally.</summary>
     protected TextDraw(Vector2 position, string text)
     {
-        Position = position;
+        _position = position;
         _text = text;
     }
 
@@ -211,7 +212,17 @@ public class TextDraw : Component
     }
 
     /// <summary>Gets the position of this textdraw.</summary>
-    public virtual Vector2 Position { get; }
+    public virtual Vector2 Position 
+    {
+        get => _position;
+        set
+        {
+            _position = value;
+            GetComponent<NativeTextDraw>()
+                .TextDrawSetPos(value.X, value.Y);
+        }
+    
+    }
 
     /// <summary>Sets the preview object rotation and zoom of this textdraw.</summary>
     /// <param name="rotation">The rotation of the preview object.</param>

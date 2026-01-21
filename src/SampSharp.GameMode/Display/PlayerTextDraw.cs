@@ -30,7 +30,7 @@ public partial class PlayerTextDraw : IdentifiedOwnedPool<PlayerTextDraw, BasePl
     public const int InvalidId = 0xFFFF;
 
     /// <summary>Maximum number of player text draws which can exist.</summary>
-    public const int Max = 256;
+    public const int Max = 2048; //2048 adjusted for custom impl of omp server
 
     /// <summary>
     /// Occurs when the <see cref="BaseMode.OnPlayerClickPlayerTextDraw(BasePlayer,ClickPlayerTextDrawEventArgs)" /> is being called. This callback is called

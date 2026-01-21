@@ -28,6 +28,13 @@ public partial class PlayerTextDraw
             throw new NativeNotImplementedException();
         }
 
+
+        [NativeMethod]
+        public virtual void PlayerTextDrawSetPos(int playerid, int text, float x, float y)
+        {
+            throw new NativeNotImplementedException();
+        }
+
         [NativeMethod]
         public virtual bool PlayerTextDrawDestroy(int playerid, int text)
         {
