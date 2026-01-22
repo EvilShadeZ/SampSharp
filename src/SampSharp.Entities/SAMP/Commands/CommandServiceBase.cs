@@ -19,6 +19,7 @@ using System.Linq;
 using System.Reflection;
 using SampSharp.Entities.SAMP.Commands.Parsers;
 using SampSharp.Entities.Utilities;
+using MethodInvoker = SampSharp.Entities.Utilities.MethodInvoker;
 
 namespace SampSharp.Entities.SAMP.Commands;
 
