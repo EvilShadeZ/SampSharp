@@ -265,4 +265,52 @@ public class NativeVehicle : BaseNativeComponent
     {
         throw new NativeNotImplementedException();
     }
+
+    [NativeMethod]
+    public virtual int GetVehicleRespawnDelay()
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod]
+    public virtual int SetVehicleRespawnDelay(int delay)
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod]
+    public virtual int GetVehicleCab()
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod]
+    public virtual int GetVehicleColours(out int col1, out int col2)
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod]
+    public virtual int GetVehicleHydraReactorAngle()
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod]
+    public virtual int GetVehicleLandingGearState()
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod]
+    public virtual float GetVehicleTrainSpeed()
+    {
+        throw new NativeNotImplementedException();
+    }
+
+    [NativeMethod] 
+    public virtual int ToggleVehicleSirenEnabled(bool toggle)
+    {
+        throw new NativeNotImplementedException(); 
+    }
 }

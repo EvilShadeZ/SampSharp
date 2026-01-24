@@ -350,6 +350,17 @@ public class Vehicle : Component
     public virtual bool IsSirenOn => GetComponent<NativeVehicle>()
         .GetVehicleParamsSirenState() == 1;
 
+    /// <summary>Gets and sets the value indicating this vehicle's siren is on. (Setting added open.mp v1.1.0.2612) </summary>
+    public virtual bool Siren
+    {
+        get => IsSirenOn;
+        set => GetComponent<NativeVehicle>()
+                .ToggleVehicleSirenEnabled(value);
+        
+    }
+
+
+
     /// <summary>Gets or sets the rotation of this vehicle.</summary>
     /// <remarks>Only the Z angle can be set!</remarks>
     public virtual Vector3 Rotation
@@ -394,6 +405,60 @@ public class Vehicle : Component
                 .GetVehicleRotationQuat(out var w, out var x, out var y, out var z);
             return new Quaternion(x, y, z, w);
         }
+    }
+
+    /// <summary>
+    /// Sets and gets the respawn delay of the vehicle. (Added  open.mp  v1.1.0.2612)
+    /// </summary>
+    public virtual int RespawnDelay
+    {
+        get => GetComponent<NativeVehicle>()
+            .GetVehicleRespawnDelay();
+
+        set => GetComponent<NativeVehicle>()
+                .SetVehicleRespawnDelay(value);
+        
+    }
+
+    /// <summary>
+    /// Gets the cab (towing vehicle) (Added  open.mp  v1.1.0.2612)
+    /// </summary>
+    public virtual EntityId GetVehicleCab
+    {
+        get
+        {
+             var id = GetComponent<NativeVehicle>()
+                    .GetVehicleCab();
+
+            return id == 0 ? EntityId.Empty : SampEntities.GetVehicleId(id);
+        }
+    }
+
+    /// <summary>
+    /// Gets the hydra reactor (thruster) angle (Added  open.mp  v1.1.0.2612)
+    /// </summary>
+    public virtual int HydraReactorAngle
+    {
+        get => GetComponent<NativeVehicle>()
+                   .GetVehicleHydraReactorAngle();
+    }
+
+    /// <summary>
+    /// Gets the state of the plane landing gears (Added  open.mp  v1.1.0.2612)
+    /// </summary>
+    public virtual LandingGearState LandingGearState
+    {
+        get => (LandingGearState)GetComponent<NativeVehicle>()
+                   .GetVehicleLandingGearState();
+    }
+
+    /// <summary>
+    /// Gets the train speed for the vehicle (Added  open.mp  v1.1.0.2612)
+    /// </summary>
+    public virtual float TrainSpeed
+    {
+        get => GetComponent<NativeVehicle>()
+                   .GetVehicleTrainSpeed();
     }
 
     /// <summary>
@@ -705,6 +770,16 @@ public class Vehicle : Component
         GetComponent<NativeVehicle>()
             .ChangeVehicleColor(color1, color2);
     }
+
+    /// <summary>Get this vehicle's primary and secondary colors.</summary>
+    /// <param name="color1">The new vehicle's primary Color ID.</param>
+    /// <param name="color2">The new vehicle's secondary Color ID.</param>
+    public virtual void GetColor(out int color1, out int color2)
+    {
+        GetComponent<NativeVehicle>()
+            .GetVehicleColours(out color1, out color2);
+    }
+
 
     /// <summary>Change this vehicle's paintjob (for plain colors see <see cref="ChangeColor" />).</summary>
     /// <param name="paintjobId">The ID of the paintjob to apply. Use 3 to remove a paintjob.</param>
